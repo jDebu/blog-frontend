@@ -1,0 +1,14 @@
+version: '1'
+services:
+  frontend:
+    container_name: blog_frontend
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3001:80"
+    volumes:
+      - .:/app
+networks:
+  default:
+    name: blog_network
