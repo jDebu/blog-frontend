@@ -1,0 +1,10 @@
+// You can add your own custom components/styles here
+@import 'tabs';
+@import 'table';
+
+body {
+  #root {
+    @apply flex flex-col;
+    min-height: calc(100vh + 1px);
+  }
+}
