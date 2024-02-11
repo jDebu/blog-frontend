@@ -17,6 +17,7 @@
     "@uiw/react-md-editor": "^4.0.3",
     "final-form": "^4.20.10",
     "mermaid": "^10.8.0",
+    "prop-types": "^15.8.1",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0",
     "react-final-form": "^6.5.9",
