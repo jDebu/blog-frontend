@@ -27,7 +27,7 @@ export const Menu = () => {
           'Content-Type': 'application/json',
         }, 
       }
-      const response = await fetch('http://localhost:3000/admin/sessions',options)
+      const response = await fetch('http://165.232.151.68:3000/admin/sessions',options)
       if (response.ok) {
         dispatch({ type: 'Logout' })
       }

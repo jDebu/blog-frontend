@@ -10,7 +10,7 @@ export const ArticleDetail = () => {
   useEffect(() => {
     const fetchArticle = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/articles/${slug}`);
+        const response = await fetch(`http://165.232.151.68:3000/api/articles/${slug}`);
         if (!response.ok) {
           throw new Error('Error fetching article');
         }

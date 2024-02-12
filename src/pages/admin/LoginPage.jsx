@@ -21,7 +21,7 @@ export const LoginPage = () => {
         body: JSON.stringify(values),
       };
     
-      const response = await fetch('http://localhost:3000/admin/sessions.json', options)
+      const response = await fetch('http://165.232.151.68:3000/admin/sessions.json', options)
       const jsonResponse = await response.json()
       if (!response.ok) {
         return { [FORM_ERROR]: jsonResponse.error}

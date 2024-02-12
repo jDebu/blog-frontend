@@ -5,7 +5,7 @@ export const ArticleList = () => {
   const [articles, setArticles] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/articles')
+    fetch('http://165.232.151.68:3000/api/articles')
       .then((response) => response.json())
       .then((data) => setArticles(data))
       .catch((error) => console.error('Error fetching articles:', error))
