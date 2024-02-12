@@ -9,8 +9,5 @@ export default defineConfig({
     postcss: {
       plugins: [tailwindcss()],
     },
-  },
-  server: {
-    port: 3001
-  },
+  }
 })
