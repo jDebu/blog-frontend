@@ -14,7 +14,7 @@ export const ArticlesForm = ({ initialValues = {}, onSubmit, create }) => {
 
   const loadImages = async () => {
     try {
-      const response = await fetch(`http://165.232.151.68:3000/admin/api/images`);
+      const response = await fetch(`https://jdebu.dev/backend/admin/api/images`);
       const json_response = await response.json();
       setImages(json_response);
     } catch (error) {
@@ -39,7 +39,7 @@ export const ArticlesForm = ({ initialValues = {}, onSubmit, create }) => {
       const formData = new FormData();
       formData.append('file', file);
 
-      const response = await fetch(`http://165.232.151.68:3000/admin/api/images`, {
+      const response = await fetch(`https://jdebu.dev/backend/admin/api/images`, {
         method: 'POST',
         body: formData,
       });
@@ -54,7 +54,7 @@ export const ArticlesForm = ({ initialValues = {}, onSubmit, create }) => {
 
   const handleImageDelete = async (imageId) => {
     try {
-      const response = await fetch(`http://165.232.151.68:3000/admin/api/images/${imageId}`, {
+      const response = await fetch(`https://jdebu.dev/backend/admin/api/images/${imageId}`, {
         method: 'DELETE',
       });
 
