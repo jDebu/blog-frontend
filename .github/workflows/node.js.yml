@@ -22,7 +22,7 @@ jobs:
     - name: Set permissions on /var/www/html
       run: sudo chown -R $USER:$USER /var/www/html
     - name: Clear contents of /var/www/html
-      run: sudo rm -rf /var/www/html/*
+      run: rm -rf /var/www/html/*
     - name: Copy dist folder to /var/www/html
       run: sudo cp -r dist/* /var/www/html
     - name: List contents of dist folder
