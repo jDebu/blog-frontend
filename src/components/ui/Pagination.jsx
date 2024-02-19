@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactPaginate from 'react-paginate'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { ReactSVG } from 'react-svg'

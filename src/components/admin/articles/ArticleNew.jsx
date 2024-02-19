@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-
 import { FORM_ERROR } from 'final-form'
-import { ArticlesForm } from './ArticlesForm'
+import { ArticlesForm } from './ArticlesForm.jsx'
 import { useNavigate } from 'react-router-dom'
-import { Container } from '../../Container'
+import { Container } from '../../Container.jsx'
+import { useState } from 'react'
 
 const formValues = {
   title: '',

@@ -1,6 +1,4 @@
-import React from 'react'
-import { Container } from '../../components/Container'
-import { Articles } from '../../components/admin/articles/Articles'
+import { Articles } from '../../components/admin/articles/Articles.jsx'
 
 export const ArticlesPage = () => {
   return (

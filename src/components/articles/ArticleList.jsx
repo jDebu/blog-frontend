@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { Article } from './Article'
+import { useState, useEffect } from 'react'
+import { Article } from './Article.jsx'
 
 export const ArticleList = () => {
   const [articles, setArticles] = useState([])

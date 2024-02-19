@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useField } from 'react-final-form'
 
 import { InputBase, ListItemIcon, MenuItem, Select, SvgIcon, Typography } from '@mui/material'
 import clsx from 'clsx'
 import PropTypes from 'prop-types'
 
-import Error from './Error'
-import { fieldWidthSizes } from '../../helpers/helpers'
+import Error from './Error.jsx'
+import { fieldWidthSizes } from '../../helpers/helpers.jsx'
 
 const BootstrapInput = ({ rootClasses, ...props }) => (
   <InputBase

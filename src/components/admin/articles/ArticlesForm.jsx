@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Form, Field } from 'react-final-form'
 
 import PropTypes from 'prop-types'
 import { Button, CircularProgress, IconButton, TextField } from '@mui/material'
 import MdEditor  from '@uiw/react-md-editor'
 import DeleteIcon from '@mui/icons-material/Delete'
-import CodeMermaid from '../../ui/CodeMermaid'
+import CodeMermaid from '../../ui/CodeMermaid.jsx'
 
 export const ArticlesForm = ({ initialValues = {}, onSubmit, create }) => {
   const [bodyValue, setBodyValue] = useState(initialValues?.body?.body ?? '')

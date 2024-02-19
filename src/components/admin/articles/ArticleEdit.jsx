@@ -1,11 +1,10 @@
-import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { FORM_ERROR } from 'final-form'
 
-import { Container } from '../../Container'
-import { ArticlesForm } from './ArticlesForm'
-import { useArticleData, useUpdateArticle } from '../../../hooks/useArticles'
+import { Container } from '../../Container.jsx'
+import { ArticlesForm } from './ArticlesForm.jsx'
+import { useArticleData, useUpdateArticle } from '../../../hooks/useArticles.jsx'
 
 export const ArticleEdit = () => {
   const { id } = useParams()

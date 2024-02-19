@@ -1,11 +1,10 @@
-import React from 'react'
 import { Form, Field } from 'react-final-form'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
-import { Container } from '../../components/Container'
+import { Container } from '../../components/Container.jsx'
 import { FORM_ERROR } from 'final-form'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../../auth/Auth'
+import { useAuth } from '../../auth/Auth.jsx'
 
 export const LoginPage = () => {
   const navigate = useNavigate()

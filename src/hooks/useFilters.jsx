@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import equal from 'fast-deep-equal'
 import queryString from 'query-string'
 
-import { request } from '../api/apiCore'
+import { request } from '../api/apiCore.jsx'
 
 const useFilters = (url, defaultFilters = {}) => {
   const location = useLocation()

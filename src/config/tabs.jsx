@@ -1,8 +1,7 @@
-import React from 'react'
-import { HomePage } from '../pages/HomePage'
-import { About } from '../pages/About'
-import { HomePage as HomePageAdmin } from '../pages/admin/HomePage'
-import { ArticlesPage } from '../pages/admin/ArticlesPage'
+import { HomePage } from '../pages/HomePage.jsx'
+import { About } from '../pages/About.jsx'
+import { HomePage as HomePageAdmin } from '../pages/admin/HomePage.jsx'
+import { ArticlesPage } from '../pages/admin/ArticlesPage.jsx'
 
 const getTabsTree = (isAdminTab) => [
   {

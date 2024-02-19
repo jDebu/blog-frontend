@@ -1,9 +1,7 @@
-import React from 'react'
-
-import { ORDER_OPTIONS } from '../../../helpers/helpers'
-import BoxTable from '../../ui/BoxTable'
-import ArticlesTable from './ArticlesTable'
-import useFilters from '../../../hooks/useFilters'
+import { ORDER_OPTIONS } from '../../../helpers/helpers.jsx'
+import BoxTable from '../../ui/BoxTable.jsx'
+import ArticlesTable from './ArticlesTable.jsx'
+import useFilters from '../../../hooks/useFilters.jsx'
 
 
 export const Articles = () => {

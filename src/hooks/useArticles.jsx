@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from 'react-query'
-import { request } from '../api/apiCore'
+import { request } from '../api/apiCore.jsx'
 
 const fetchArticle = id => request({ url: `/admin/api/articles/${id}.json` })
 

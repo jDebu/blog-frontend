@@ -1,8 +1,7 @@
-import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 
-import { HomeTab } from '../components/ui/HomeTab'
-import { ArticleDetail } from '../components/articles/ArticleDetail'
+import { HomeTab } from '../components/ui/HomeTab.jsx'
+import { ArticleDetail } from '../components/articles/ArticleDetail.jsx'
 
 const HomeRoutes = () => (
   <Routes>

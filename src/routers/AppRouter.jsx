@@ -1,21 +1,19 @@
-import React from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { Header } from "../components/ui/Header"
-import { PublicRoute } from "./PublicRoute";
-import "../assets/stylesheets/application.scss"
+import { Header } from "../components/ui/Header.jsx"
+import { PublicRoute } from "./PublicRoute.jsx";
 import HomeRoutes from "./HomeRouters"
 import Profile from "../assets/images/profile.svg"
 import Location from "../assets/icons/location.svg"
 import Github from "../assets/icons/github.svg"
 import Linkedin from "../assets/icons/linkedin.svg"
 import { Avatar } from "@mui/material"
-import { Container } from "../components/Container"
-import { LoginPage } from '../pages/admin/LoginPage'
-import { useAuth } from "../auth/Auth"
-import { PrivateRoute } from "./PrivateRoute"
-import { AdminRoutes } from "./AdminRoutes"
+import { Container } from "../components/Container.jsx"
+import { LoginPage } from '../pages/admin/LoginPage.jsx'
+import { useAuth } from "../auth/Auth.jsx"
+import { PrivateRoute } from "./PrivateRoute.jsx"
+import { AdminRoutes } from "./AdminRoutes.jsx"
 import clsx from "clsx"
-import { isAdminRoute } from "../helpers/helpers";
+import { isAdminRoute } from "../helpers/helpers.jsx";
 
 const AppRouterInternal = () => {
   const { admin } = useAuth() || {}

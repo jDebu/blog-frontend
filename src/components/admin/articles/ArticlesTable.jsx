@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
 import PropTypes from 'prop-types'
@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import { IconButton } from '@mui/material'
 import EditIcon from '../../../assets/images/edit_icon.svg'
 import ViewIcon from '../../../assets/images/view_icon.svg'
-import { Pagination } from '../../ui/Pagination'
+import { Pagination } from '../../ui/Pagination.jsx'
 
 const TableActions = ({ article }) => {
   return (
@@ -31,7 +31,7 @@ const TableActions = ({ article }) => {
   )
 }
 
-const ArticlesTable = ({ articles = [], totalPages = 0, onStatusChange }) => (
+const ArticlesTable = ({ articles = [], totalPages = 0 }) => (
   <>
     <section className="overflow-x-auto overflow-y-hidden">
       <table className="admin-table">
@@ -62,8 +62,7 @@ const ArticlesTable = ({ articles = [], totalPages = 0, onStatusChange }) => (
 
 ArticlesTable.propTypes = {
   articles: PropTypes.array,
-  totalPages: PropTypes.number,
-  onStatusChange: PropTypes.func
+  totalPages: PropTypes.number
 }
 
 TableActions.propTypes = {

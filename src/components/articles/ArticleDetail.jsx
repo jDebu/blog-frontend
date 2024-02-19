@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Container } from '../Container'
-import { Article } from './Article'
+import { Container } from '../Container.jsx'
+import { Article } from './Article.jsx'
 
 export const ArticleDetail = () => {
   const [article, setArticle] = useState(null);

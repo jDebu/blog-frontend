@@ -1,6 +1,5 @@
-import React from 'react'
-import { AppRouter } from '../routers/AppRouter'
-import Auth from '../auth/Auth'
+import { AppRouter } from '../routers/AppRouter.jsx'
+import Auth from '../auth/Auth.jsx'
 
 const App = () => {
   return (

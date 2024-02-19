@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useEffect, useReducer } from 'react'
+import { createContext, useContext, useEffect, useReducer } from 'react'
 import PropTypes from 'prop-types'
-import { getJsonItemFromLocalStorage, setItemToLocalStorage } from '../helpers/helpers'
+import { getJsonItemFromLocalStorage, setItemToLocalStorage } from '../helpers/helpers.jsx'
 
 const AuthContext = createContext({ admin: {}, dispatch: () => {} })
 const init = () => getJsonItemFromLocalStorage('adminData') || { logged: false }

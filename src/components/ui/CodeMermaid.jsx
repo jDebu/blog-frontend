@@ -1,8 +1,6 @@
-import React, { useState, useRef, useEffect, Fragment, useCallback } from 'react'
-import { getCodeString } from 'rehype-rewrite';
-import mermaid from "mermaid";
-import PropTypes from 'prop-types';
-
+import { useState, useRef, useEffect, Fragment, useCallback } from 'react'
+import { getCodeString } from 'rehype-rewrite'
+import mermaid from "mermaid"
 
 const randomid = () => parseInt(String(Math.random() * 1e15), 10).toString(36);
 const CodeMermaid = ({ inline, children = [], className, ...props }) => {

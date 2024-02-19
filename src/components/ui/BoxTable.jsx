@@ -1,11 +1,10 @@
-import React from 'react'
 import { Form } from 'react-final-form'
 
 import PropTypes from 'prop-types'
 
-import AutoSave from '../AutoSave'
-import SearchField from '../fields/SearchField'
-import SelectField from '../fields/SelectField'
+import AutoSave from '../AutoSave.jsx'
+import SearchField from '../fields/SearchField.jsx'
+import SelectField from '../fields/SelectField.jsx'
 import { Button } from '@mui/material'
 
 const classNames = [

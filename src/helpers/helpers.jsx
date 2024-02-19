@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom"
+import queryString from 'query-string'
 
 export const truncateText = (text, maxLength) => (text.length > maxLength ? `${text.slice(0, maxLength)}...` : text)
 export const setItemToLocalStorage = (key, value) => localStorage.setItem(key, value)

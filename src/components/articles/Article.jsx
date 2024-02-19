@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom"
-import React from "react"
 import PropTypes from "prop-types"
-import { truncateText } from "../../helpers/helpers"
+import { truncateText } from "../../helpers/helpers.jsx"
 import clsx from "clsx"
 import ReactMarkdown from "react-markdown"
 import MDEditor from '@uiw/react-md-editor'
-import CodeMermaid from "../ui/CodeMermaid"
+import CodeMermaid from "../ui/CodeMermaid.jsx"
 
 const sanitizeText = (text) => {
   const doc = new DOMParser().parseFromString(text, "text/html");
@@ -55,4 +54,5 @@ Article.propTypes = {
   title: PropTypes.string,
   body: PropTypes.string,
   slug: PropTypes.string,
+  listMode: PropTypes.bool
 };

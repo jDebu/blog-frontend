@@ -1,5 +1,4 @@
-import React from 'react'
-import { Container } from '../components/Container'
+import { Container } from '../components/Container.jsx'
 
 export const About = () => {
   return (

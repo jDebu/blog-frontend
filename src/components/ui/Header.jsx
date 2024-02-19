@@ -1,7 +1,6 @@
-import React from 'react'
 import Logo from '../../assets/images/logo.svg'
-import { Container } from '../Container'
-import { Menu } from '../ui/Menu'
+import { Container } from '../Container.jsx'
+import { Menu } from '../ui/Menu.jsx'
 
 export const Header = () => (
   <header className="shadow-md py-3.75">

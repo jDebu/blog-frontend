@@ -1,6 +1,5 @@
-import React from 'react'
-import { Container } from '../components/Container'
-import { ArticleList } from '../components/articles/ArticleList'
+import { Container } from '../components/Container.jsx'
+import { ArticleList } from '../components/articles/ArticleList.jsx'
 
 export const HomePage = () => {
   return (
