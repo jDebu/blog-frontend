@@ -18,9 +18,9 @@ jobs:
     - run: yarn install
     - run: yarn build
     - name: Add user to sudo group
-      run: usermod -aG sudo $USER
+      run: sudo usermod -aG sudo $USER
     - name: Set permissions on /var/www/html
-      run: chown -R $USER:$USER /var/www/html
+      run: sudo chown -R $USER:$USER /var/www/html
     - name: Clear contents of /var/www/html
       run: rm -rf /var/www/html/*
     - name: Copy dist folder to /var/www/html
