@@ -1,31 +1,21 @@
+
 name: Deploy to Server
 
 on:
   push:
     branches:
       - main
-
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    # - name: Build Docker image
-    #   run: docker build --file Dockerfile.prod --build-arg NODE_ENV=production -t blog_frontend .
-
-    - name: Debug Converted SSH Key
-      run: |
-        echo "${{ secrets.SERVER_SSH_KEY }}"
-        echo "${{ secrets.SERVER_HOST }}"
-        
-
-    - name: Copy files to running container on server
-      run: |
-        ssh -i ${{ secrets.SERVER_SSH_KEY }} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@${{ secrets.SERVER_HOST }} # "docker cp dist/. blog_frontend:/usr/share/nginx/html/"
-
-    # - name: Restart container on server
-    #   run: |
-    #     ssh -i ${{ secrets.SERVER_SSH_KEY }} root@${{ secrets.SERVER_HOST }} 'docker-compose restart blog_frontend'
+    - name: Deploy app
+      uses: appleboy/ssh-action@ve.1.2
+    with:
+      host: ${{secrets.SERVER_HOST}}
+      key: ${{secrets.SERVER_SSH_KEY}}
+      username: ${{secrets.SERVER_USERNAME}}
+      script: |
+        mkdir test
+        cd test
+        echo "finish"
