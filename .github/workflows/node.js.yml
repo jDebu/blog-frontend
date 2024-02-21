@@ -16,13 +16,10 @@ jobs:
     - name: Build Docker image
       run: docker build --file Dockerfile.prod --build-arg NODE_ENV=production -t blog_frontend .
 
-    - name: Copy files to running container
+    - name: Copy files to running container on server
       run: |
-        docker cp dist/. root@${{ secrets.SERVER_HOST }}:/usr/share/nginx/html/
-      env:
-        DOCKER_HOST: ssh://root@${{ secrets.SERVER_HOST }}
-        DOCKER_SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
+        ssh -i ${{ secrets.SERVER_SSH_KEY }} root@${{ secrets.SERVER_HOST }} "docker cp dist/. blog_frontend:/usr/share/nginx/html/"
 
     - name: Restart container on server
       run: |
-        ssh -i ${{ secrets.SERVER_SSH_KEY }} root@${{ secrets.SERVER_HOST }} 'docker compose restart blog_frontend'
+        ssh -i ${{ secrets.SERVER_SSH_KEY }} root@${{ secrets.SERVER_HOST }} 'docker-compose restart blog_frontend'
