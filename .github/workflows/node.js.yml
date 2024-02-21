@@ -8,6 +8,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
     - name: Build Docker image
       run: docker build --file Dockerfile.prod --build-arg NODE_ENV=production -t blog_frontend .  
     - name: Copy files to running container on server
