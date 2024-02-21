@@ -16,6 +16,11 @@ jobs:
     - name: Build Docker image
       run: docker build --file Dockerfile.prod --build-arg NODE_ENV=production -t blog_frontend .
 
+    - name: Debug SSH Key
+      run: |
+        cat ${{ secrets.SERVER_SSH_KEY }}
+        cat {{ secrets.SERVER_HOST }}
+
     - name: Copy files to running container on server
       run: |
         ssh -i ${{ secrets.SERVER_SSH_KEY }} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@${{ secrets.SERVER_HOST }} "docker cp dist/. blog_frontend:/usr/share/nginx/html/"
