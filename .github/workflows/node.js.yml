@@ -13,7 +13,7 @@ jobs:
     - name: Build Docker image
       run: docker build --file Dockerfile.prod --build-arg NODE_ENV=production -t blog_frontend .
     - name: Extract Dist from Docker Image
-      run: docker create --name dummy blog_frontend && docker cp dummy:/app/dist . && docker rm -f dummy
+      run: docker create --name dummy blog_frontend && docker cp dummy:/app/dist/. ./dist && docker rm -f dummy
     - name: Copy files to running container on server
       uses: appleboy/ssh-action@master
       with:
