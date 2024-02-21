@@ -16,14 +16,10 @@ jobs:
     # - name: Build Docker image
     #   run: docker build --file Dockerfile.prod --build-arg NODE_ENV=production -t blog_frontend .
 
-    - name: Convert SSH Key
-      run: |
-        echo "${{ secrets.SERVER_SSH_KEY }}" | ssh-keygen -p -m PEM -f id_rsa
-        chmod 600 id_rsa
-
     - name: Debug Converted SSH Key
       run: |
-        cat id_rsa
+        echo "${{ secrets.SERVER_SSH_KEY }}"
+        echo "${{ secrets.SERVER_HOST }}"
         
 
     # - name: Copy files to running container on server
