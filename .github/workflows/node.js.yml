@@ -1,4 +1,3 @@
-
 name: Deploy to Server
 
 on:
@@ -9,13 +8,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Deploy app
+    - name: Build Docker image
+      run: docker build --file Dockerfile.prod --build-arg NODE_ENV=production -t blog_frontend .  
+    - name: Copy files to running container on server
       uses: appleboy/ssh-action@master
       with:
         host: ${{secrets.SERVER_HOST}}
         key: ${{secrets.SERVER_SSH_KEY}}
         username: ${{secrets.SERVER_USERNAME}}
         script: |
-          mkdir test
-          cd test
+          docker cp dist/. blog_frontend:/usr/share/nginx/html/
+          docker-compose restart blog_frontend
           echo "finish"
