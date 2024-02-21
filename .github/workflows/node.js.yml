@@ -18,8 +18,8 @@ jobs:
 
     - name: Debug SSH Key
       run: |
-        cat ${{ secrets.SERVER_HOST }}
-        cat ${{ secrets.SERVER_SSH_KEY }}
+        echo ${{ secrets.SERVER_HOST }}
+        echo ${{ secrets.SERVER_SSH_KEY }}
         
 
     # - name: Copy files to running container on server
