@@ -18,7 +18,7 @@ jobs:
 
     - name: Copy files to running container on server
       run: |
-        ssh -i ${{ secrets.SERVER_SSH_KEY }} root@${{ secrets.SERVER_HOST }} "docker cp dist/. blog_frontend:/usr/share/nginx/html/"
+        ssh -i ${{ secrets.SERVER_SSH_KEY }} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@${{ secrets.SERVER_HOST }} "docker cp dist/. blog_frontend:/usr/share/nginx/html/"
 
     - name: Restart container on server
       run: |
