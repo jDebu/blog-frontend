@@ -10,8 +10,14 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
     - name: Run yarn build on GitHub Actions
       run: |
+        yarn install
+        yarn build
         ls -la
     # - name: Copy files to running container on server
     #   uses: appleboy/ssh-action@master
