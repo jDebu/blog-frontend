@@ -19,13 +19,13 @@ jobs:
         yarn install
         yarn build
         ls -la
-    # - name: Copy files to running container on server
-    #   uses: appleboy/ssh-action@master
-    #   with:
-    #     host: ${{secrets.SERVER_HOST}}
-    #     key: ${{secrets.SERVER_SSH_KEY}}
-    #     username: ${{secrets.SERVER_USERNAME}}
-    #     script: |
-    #       docker cp dist/. blog_frontend:/usr/share/nginx/html/
-    #       docker compose restart blog_frontend
-    #       echo "finish"
+    - name: Copy files to running container on server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{secrets.SERVER_HOST}}
+        key: ${{secrets.SERVER_SSH_KEY}}
+        username: ${{secrets.SERVER_USERNAME}}
+        script: |
+          docker cp dist/. blog_frontend:/usr/share/nginx/html/
+          docker restart blog_frontend
+          echo "finish"
