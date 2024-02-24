@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 3001",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -21,7 +21,6 @@
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0",
     "react-final-form": "^6.5.9",
-    "react-markdown": "^9.0.1",
     "react-paginate": "^8.2.0",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.21.3",

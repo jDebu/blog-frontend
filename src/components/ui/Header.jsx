@@ -12,7 +12,7 @@ export const Header = () => (
         />
       </a>
       <div className="md:bg-white md:w-px mx-6 h-6 hidden md:block"></div>
-      <p className="hidden md:block text-sm leading-4">José Delgado xd</p>
+      <p className="hidden md:block text-sm leading-4">José Delgado</p>
       <Menu />
     </Container>
   </header>

@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
 import { Header } from "../components/ui/Header.jsx"
 import { PublicRoute } from "./PublicRoute.jsx";
 import HomeRoutes from "./HomeRouters"
@@ -14,21 +14,27 @@ import { PrivateRoute } from "./PrivateRoute.jsx"
 import { AdminRoutes } from "./AdminRoutes.jsx"
 import clsx from "clsx"
 import { isAdminRoute } from "../helpers/helpers.jsx";
+import { useEffect, useState } from "react";
 
 const AppRouterInternal = () => {
   const { admin } = useAuth() || {}
-
+  const [detailView, setDetailView] = useState(false)
+  const location = useLocation()
+  useEffect(() => {
+    const isDetailRoute = /^\/articles(?:\/|$)/.test(location.pathname)
+    setDetailView(isDetailRoute)
+  }, [location]);
   return (
     <div>
       <Header />
       <div className="block">
         <div className={clsx(
-            {'flex justify-evenly': !isAdminRoute },
-            {'container mx-auto px-5 md:px-20 items-center mt-4': isAdminRoute }
+            {'flex justify-evenly': !isAdminRoute && !detailView},
+            {'container mx-auto px-5 md:px-20 items-center mt-4': isAdminRoute || detailView }
           )}>
           <main className={clsx(
-            {'mt-4 mb-8 flex-auto': !isAdminRoute },
-            {'inline': isAdminRoute }
+            {'mt-4 mb-8 flex-auto': !isAdminRoute && !detailView },
+            {'inline': isAdminRoute || detailView }
           )}>
             <Container className="px-5 md:px-20 flex items-center">
               <div className="profile-header py-3">
@@ -62,7 +68,7 @@ const AppRouterInternal = () => {
               />
             </Routes>
           </main>
-          {!isAdminRoute && (<aside className="mt-4 ml-2">
+          {!isAdminRoute && !detailView && (<aside className="mt-4 ml-2">
             <div>
               <div className="profile m-auto">
                 <Avatar

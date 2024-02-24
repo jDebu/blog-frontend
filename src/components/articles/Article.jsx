@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 import { truncateText } from "../../helpers/helpers.jsx"
 import clsx from "clsx"
-import ReactMarkdown from "react-markdown"
 import MDEditor from '@uiw/react-md-editor'
 import CodeMermaid from "../ui/CodeMermaid.jsx"
 
@@ -16,22 +15,30 @@ const sanitizeText = (text) => {
   return sanitizedText;
 };
 
-export const Article = ({ title, body, slug, listMode = true }) => {
-  const content = listMode ? truncateText(body, 210) : body
+export const Article = ({ title, body, slug, listMode = true, summary = '', coverImage }) => {
+  const content = listMode ? truncateText(summary, 210) : body
   const sanitizedContent = listMode ? sanitizeText(content) : body.replace(/&gt;/g, ">")
+  const base = import.meta.env.VITE_API_BASE;
 
   return (
-    <div className="w-full">
+    <div className="w-full inline-flex">
       {listMode ? (
         <>
-          <Link to={`/articles/${slug}`}>
-            <h1 className="font-black py-2">{title}</h1>
-          </Link>
-          <ReactMarkdown
-            className={clsx({ "line-clamp-3 md:line-clamp-2": listMode })}
-            children={sanitizedContent}
-            allowedElements={["a", "strong", "em", "p", "h1", "h2", "ul", "ol", "li", "blockquote"]}
-          />
+          <div className="flex flex-col">
+            <Link to={`/articles/${slug}`}>
+              <h1 className="font-black py-2">{title}</h1>
+            </Link>
+            <div className="line-clamp-3 md:line-clamp-2 flex-grow">
+              {content}
+            </div>
+          </div>
+          <div className="ml-4">
+            <img
+              src={`${base.replace('/backend', '')}${coverImage}`}
+              alt="No image"
+              className="min-w-16 min-h-16 w-16 h-16"
+            />
+          </div>
         </>
       ) : (
         <>
@@ -54,5 +61,7 @@ Article.propTypes = {
   title: PropTypes.string,
   body: PropTypes.string,
   slug: PropTypes.string,
-  listMode: PropTypes.bool
+  listMode: PropTypes.bool,
+  summary: PropTypes.string,
+  coverImage: PropTypes.string
 };

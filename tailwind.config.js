@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 const { fontSize, minWidth } = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
@@ -74,11 +75,6 @@ module.exports = {
       orange: {
         ...colors.orange
       }
-    },
-    minWidth: {
-      ...minWidth,
-      25: '6.25rem',
-      36: '9rem'
     },
     lineHeight: {
       13: '3.25rem'

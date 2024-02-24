@@ -56,7 +56,7 @@ export const SelectInput = ({
   return (
     <div className={clsx(parentClassName, isHorizontal ? 'block md:flex items-baseline' : '')}>
       {label && (
-        <label htmlFor={`${name}-input`} className={clsx('block font-bold mb-2 min-w-fit', { 'mr-4': isHorizontal })}>
+        <label htmlFor={`${name}-input`} className={clsx('block font-bold mb-2 min-w-20', { 'mr-4': isHorizontal })}>
           {label}
         </label>
       )}

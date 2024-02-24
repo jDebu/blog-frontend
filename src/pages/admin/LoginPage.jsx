@@ -5,6 +5,7 @@ import { Container } from '../../components/Container.jsx'
 import { FORM_ERROR } from 'final-form'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../auth/Auth.jsx'
+import { request } from '../../api/apiCore.jsx'
 
 export const LoginPage = () => {
   const navigate = useNavigate()
@@ -20,13 +21,13 @@ export const LoginPage = () => {
         body: JSON.stringify(values),
       };
     
-      const response = await fetch('https://jdebu.dev/backend/admin/sessions.json', options)
-      const jsonResponse = await response.json()
-      if (!response.ok) {
-        return { [FORM_ERROR]: jsonResponse.error}
+      const response = await request({url: '/admin/sessions.json', ...options})
+      console.log(response)
+      if (!response?.token) {
+        return { [FORM_ERROR]: response.error}
       }
 
-      dispatch({ type: 'Login', payload: { ...jsonResponse } })
+      dispatch({ type: 'Login', payload: { ...response } })
 
       navigate('/admin/home')
       

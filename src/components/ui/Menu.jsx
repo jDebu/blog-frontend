@@ -5,6 +5,7 @@ import { getFirstLetter, isAdminRoute } from '../../helpers/helpers.jsx'
 import { ReactSVG } from 'react-svg'
 import { Grow, MenuItem, MenuList, Paper, Popper } from '@mui/material'
 import ArrowDownIcon from '../../assets/images/arrow_down_icon.svg'
+import { request } from '../../api/apiCore.jsx'
 
 export const Menu = () => {
   const { admin, dispatch } = useAuth()
@@ -27,8 +28,9 @@ export const Menu = () => {
           'Content-Type': 'application/json',
         }, 
       }
-      const response = await fetch('https://jdebu.dev/backend/admin/sessions',options)
-      if (response.ok) {
+      const response = await request({url: '/admin/sessions', ...options})
+      console.log(response)
+      if (response) {
         dispatch({ type: 'Logout' })
       }
       navigate('/admin')

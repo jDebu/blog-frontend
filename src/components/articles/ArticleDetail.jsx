@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Container } from '../Container.jsx'
 import { Article } from './Article.jsx'
+import { request } from '../../api/apiCore.jsx';
 
 export const ArticleDetail = () => {
   const [article, setArticle] = useState(null);
@@ -10,13 +11,12 @@ export const ArticleDetail = () => {
   useEffect(() => {
     const fetchArticle = async () => {
       try {
-        const response = await fetch(`https://jdebu.dev/backend/api/articles/${slug}`);
-        if (!response.ok) {
+        const response = await request({url: `/api/articles/${slug}`});
+        console.log(response)
+        if (!response.id) {
           throw new Error('Error fetching article');
         }
-
-        const articleData = await response.json();
-        setArticle(articleData);
+        setArticle(response);
       } catch (error) {
         console.error(error);
       }

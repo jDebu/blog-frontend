@@ -7,6 +7,7 @@ export const getItemFromLocalStorage = key => localStorage.getItem(key)
 export const getJsonItemFromLocalStorage = key => JSON.parse(getItemFromLocalStorage(key))
 export const removeItemFromLocalStorage = keys => keys.map(key => localStorage.removeItem(key))
 export const isAdminRoute =  /^\/admin(?:\/|$)/.test(location.pathname)
+export const isDetailRoute =  /^\/articles(?:\/|$)/.test(location.pathname)
 export const isArticleDetailRoute = /^\/articles\/.*$/.test(window.location.pathname);
 export const getFirstLetter = (name = '') => (name.match(/[a-z]/i).length > 0 ? name.match(/[a-z]/i)[0].toUpperCase() : '')
 export const fieldWidthSizes = {
@@ -24,6 +25,6 @@ export const urlSearchParamsData = () => {
   return queryString.parse(search)
 }
 export const ORDER_OPTIONS = [
-  { value: 'created_at desc', label: 'Más recientes primero' },
-  { value: 'created_at asc', label: 'Más antiguos primero' }
+  { value: 'created_at desc', label: 'Most recent' },
+  { value: 'created_at asc', label: 'Oldest first' }
 ]

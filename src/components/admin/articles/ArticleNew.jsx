@@ -10,21 +10,31 @@ const formValues = {
 }
 
 export const ArticleNew = () => {
+
+  const base = import.meta.env.VITE_API_BASE;
   const [initialValues, setInitialValues] = useState(formValues)
   const navigate = useNavigate()
   const onSubmit = async values => {
     try {
+      console.log(values)
+      const formData = new FormData();
+    
+      Object.entries(values).forEach(([key, value]) => {
+        formData.append(key, value);
+      });
+
+      formData.append('file', values.file[0]);
+
+      console.log(formData)
+
       const options = {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
+        body: formData,
       };
     
-      const response = await fetch('https://jdebu.dev/backend/admin/api/articles', options)
+      const response = await fetch(`${base}/admin/api/articles`, options)
       const jsonResponse = await response.json()
-      if (!response.ok) {
+      if (!jsonResponse?.id) {
         return { [FORM_ERROR]: jsonResponse.error}
       }
 

@@ -1,2 +1,4 @@
 src/components/AutoSave.jsx
 tailwind.config.js
+src/hooks/useFilters.jsx
+src/components/ui/CodeMermaid.jsx

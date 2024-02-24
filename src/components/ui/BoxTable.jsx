@@ -72,7 +72,7 @@ const BoxTable = ({
                   <SelectField
                     size="full"
                     name={sortByName}
-                    label="Ordenar por:"
+                    label="Sort by:"
                     orientation="horizontal"
                     containerClassName="mt-2 md:mt-0"
                     parentClassName="md:w-90"
@@ -83,7 +83,7 @@ const BoxTable = ({
               </article>
               <article className="flex justify-center flex-wrap">
                 {displayTotal && (
-                  <p className="font-medium mr-auto mb-6 mt-9">Resultados encontrados: {values.total_count}</p>
+                  <p className="font-medium mr-auto mb-6 mt-9">Results found: {values.total_count}</p>
                 )}
                 <div className="w-full">{children}</div>
               </article>
