@@ -157,7 +157,7 @@ export const ArticlesForm = ({ initialValues = {}, onSubmit, create }) => {
             />
           </div>
           <div className="mt-4 mb-8">
-            <label>Cover image:</label>
+            <label>Cover image(112x112):</label>
             <Field
               name="file"
               render={({ input }) => (

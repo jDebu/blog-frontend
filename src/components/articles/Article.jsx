@@ -21,22 +21,22 @@ export const Article = ({ title, body, slug, listMode = true, summary = '', cove
   const base = import.meta.env.VITE_API_BASE;
 
   return (
-    <div className="w-full inline-flex">
+    <div className="w-full inline-flex mb-2">
       {listMode ? (
         <>
           <div className="flex flex-col">
             <Link to={`/articles/${slug}`}>
               <h1 className="font-black py-2">{title}</h1>
             </Link>
-            <div className="line-clamp-3 md:line-clamp-2 flex-grow">
+            <div className="">
               {content}
             </div>
           </div>
-          <div className="ml-4">
+          <div className="ml-4 mt-2">
             <img
               src={`${base.replace('/backend', '')}${coverImage}`}
               alt="No image"
-              className="min-w-16 min-h-16 w-16 h-16"
+              className="min-w-28 min-h-28 h-28 w-28"
             />
           </div>
         </>
