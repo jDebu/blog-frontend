@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const { fontSize, minWidth } = require('tailwindcss/defaultTheme')
+const { fontSize, minWidth, padding } = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     extend: {
       padding: {
+        ...padding,
         0.75: '0.1875rem',
         1.75: '0.438rem',
         2.25: '0.563rem',

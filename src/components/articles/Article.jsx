@@ -21,7 +21,7 @@ export const Article = ({ title, body, slug, listMode = true, summary = '', cove
   const base = import.meta.env.VITE_API_BASE;
 
   return (
-    <div className="w-full inline-flex mb-2">
+    <div className={clsx('w-full mb-2', { 'inline-flex': listMode })}>
       {listMode ? (
         <>
           <div className="flex flex-col">
