@@ -17,7 +17,7 @@ const sanitizeText = (text) => {
 
 export const Article = ({ title, body, slug, listMode = true, summary = '', coverImage }) => {
   const content = listMode ? truncateText(summary, 210) : body
-  const sanitizedContent = listMode ? sanitizeText(content) : body.replace(/&gt;/g, ">")
+  const sanitizedContent = listMode ? sanitizeText(content) : body.replace(/&gt;/g, ">").replace(/&lt;/g, "<")
   const base = import.meta.env.VITE_API_BASE;
 
   return (
