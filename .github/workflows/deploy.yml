@@ -41,7 +41,7 @@ jobs:
         username: ${{secrets.SERVER_USERNAME}}
         script: |
           cd /var/www/html
-          cp dist/* /
+          cp -r dist/* .
           rm -rf dist
           ls -la
           sudo service nginx restart
