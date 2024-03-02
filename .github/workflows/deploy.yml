@@ -26,7 +26,7 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         source: "dist"
-        target: "/root"
+        target: "/var/www/html"
     - name: Copy files to running container on server
       uses: appleboy/ssh-action@master
       with:
@@ -35,6 +35,5 @@ jobs:
         username: ${{secrets.SERVER_USERNAME}}
         script: |
           ls -la
-          docker cp ./dist/. blog_frontend:/usr/share/nginx/html/
-          docker restart blog_frontend
+          sudo service nginx restart
           echo "finish"
