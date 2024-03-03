@@ -40,7 +40,7 @@ jobs:
         key: ${{secrets.SERVER_SSH_KEY}}
         username: ${{secrets.SERVER_USERNAME}}
         script: |
-          cd /var/www/html
+          cd /usr/share/nginx/html
           cp -r dist/* .
           rm -rf dist
           ls -la
