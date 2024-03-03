@@ -31,7 +31,7 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         source: "dist"
-        target: "/var/www/html"
+        target: "/usr/share/nginx/html"
 
     - name: Copy files to running container on server
       uses: appleboy/ssh-action@master
